@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Warm coffee palette */
+    --background: 0.97 0.015 75;
+    --foreground: 0.22 0.04 55;
+    --card: 0.99 0.01 75;
+    --card-foreground: 0.22 0.04 55;
+    --popover: 0.99 0.01 75;
+    --popover-foreground: 0.22 0.04 55;
+    --primary: 0.45 0.1 55;
+    --primary-foreground: 0.97 0.01 75;
+    --secondary: 0.93 0.03 75;
+    --secondary-foreground: 0.28 0.06 55;
+    --muted: 0.93 0.025 75;
+    --muted-foreground: 0.5 0.04 60;
+    --accent: 0.75 0.12 75;
+    --accent-foreground: 0.18 0.04 50;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.03 75;
+    --input: 0.88 0.03 75;
+    --ring: 0.65 0.1 70;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Coffee-specific custom tokens */
+    --espresso: 0.22 0.055 50;
+    --amber: 0.72 0.14 72;
+    --cream: 0.97 0.018 80;
+    --latte: 0.88 0.04 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+  .text-espresso {
+    color: oklch(var(--espresso));
+  }
+  .text-amber-custom {
+    color: oklch(var(--amber));
+  }
+  .bg-espresso {
+    background-color: oklch(var(--espresso));
+  }
+  .bg-amber-custom {
+    background-color: oklch(var(--amber));
+  }
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+  .bg-latte {
+    background-color: oklch(var(--latte));
+  }
+  .border-amber-custom {
+    border-color: oklch(var(--amber));
+  }
+}
