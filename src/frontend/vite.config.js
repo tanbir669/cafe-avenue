@@ -14,6 +14,7 @@ process.env.STORAGE_GATEWAY_URL =
 
 export default defineConfig({
   logLevel: "error",
+  publicDir: fileURLToPath(new URL("../../frontend/public", import.meta.url)),
   build: {
     emptyOutDir: true,
     sourcemap: false,
@@ -30,6 +31,7 @@ export default defineConfig({
     },
   },
   server: {
+    host: true,
     proxy: {
       "/api": {
         target: "http://127.0.0.1:4943",
